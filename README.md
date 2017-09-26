@@ -1,7 +1,7 @@
-#Testing some Angular & Typescript.
-##Also playing around with Angular Material.
+# Testing some Angular & Typescript.
+## Also playing around with Angular Material.
 
-####Stuff to do:
+#### Stuff to do:
 1. Restructure files into module/component folders
 2. Do more with the UI (Angular Material)
 3. Have a SRC/DIST folder.  Target JS build files to DIST folder and make sure everything works.

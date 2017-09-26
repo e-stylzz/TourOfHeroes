@@ -8,53 +8,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var hero_service_1 = require("./hero.service");
-var HeroesComponent = (function () {
-    function HeroesComponent(router, heroService) {
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const hero_service_1 = require("./hero.service");
+let HeroesComponent = class HeroesComponent {
+    constructor(router, heroService) {
         this.router = router;
         this.heroService = heroService;
     }
-    HeroesComponent.prototype.onSelect = function (hero) {
+    onSelect(hero) {
         this.selectedHero = hero;
-    };
+    }
     ;
-    HeroesComponent.prototype.getHeroes = function () {
-        var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-    };
-    HeroesComponent.prototype.ngOnInit = function () {
+    getHeroes() {
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    }
+    ngOnInit() {
         this.getHeroes();
-    };
-    HeroesComponent.prototype.gotoDetail = function () {
+    }
+    gotoDetail() {
         this.router.navigate(['/detail', this.selectedHero.id]);
-    };
-    HeroesComponent.prototype.add = function (name) {
-        var _this = this;
+    }
+    add(name) {
         name = name.trim();
         if (!name) {
             return;
         }
         this.heroService.create(name)
-            .then(function (hero) {
-            _this.heroes.push(hero);
-            _this.selectedHero = null;
+            .then(hero => {
+            this.heroes.push(hero);
+            this.selectedHero = null;
         });
-    };
-    HeroesComponent.prototype.delete = function (hero) {
-        var _this = this;
+    }
+    delete(hero) {
         this.heroService
             .delete(hero.id)
-            .then(function () {
-            _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
-            if (_this.selectedHero === hero) {
-                _this.selectedHero = null;
+            .then(() => {
+            this.heroes = this.heroes.filter(h => h !== hero);
+            if (this.selectedHero === hero) {
+                this.selectedHero = null;
             }
         });
-    };
-    return HeroesComponent;
-}());
+    }
+};
 HeroesComponent = __decorate([
     core_1.Component({
         selector: 'my-heroes',

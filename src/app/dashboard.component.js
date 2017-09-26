@@ -8,20 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var hero_service_1 = require("./hero.service");
-var DashboardComponent = (function () {
-    function DashboardComponent(heroService) {
+const core_1 = require("@angular/core");
+const hero_service_1 = require("./hero.service");
+let DashboardComponent = class DashboardComponent {
+    constructor(heroService) {
         this.heroService = heroService;
         this.heroes = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
+    ngOnInit() {
         this.heroService.getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-    };
-    return DashboardComponent;
-}());
+            .then(heroes => this.heroes = heroes.slice(1, 5));
+    }
+};
 DashboardComponent = __decorate([
     core_1.Component({
         selector: 'my-dashboard',

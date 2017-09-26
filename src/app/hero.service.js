@@ -8,60 +8,59 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var HeroService = (function () {
-    function HeroService(http) {
+let HeroService = class HeroService {
+    constructor(http) {
         this.http = http;
         this.heroesUrl = 'api/heroes';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
-    HeroService.prototype.getHeroes = function () {
+    getHeroes() {
         //return Promise.resolve(HEROES);
         return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(response => response.json().data)
             .catch(this.handleError);
-    };
-    HeroService.prototype.getHero = function (id) {
-        var url = this.heroesUrl + "/" + id;
+    }
+    getHero(id) {
+        const url = `${this.heroesUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(response => response.json().data)
             .catch(this.handleError);
         // return this.getHeroes()
         //     .then(heroes => heroes.find(hero => hero.id === id));
-    };
-    HeroService.prototype.update = function (hero) {
-        var url = this.heroesUrl + "/" + hero.id;
+    }
+    update(hero) {
+        const url = `${this.heroesUrl}/${hero.id}`;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
             .toPromise()
-            .then(function () { return hero; })
+            .then(() => hero)
             .catch(this.handleError);
-    };
-    HeroService.prototype.create = function (name) {
+    }
+    create(name) {
         return this.http
             .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
+            .then(res => res.json().data)
             .catch(this.handleError);
-    };
-    HeroService.prototype.delete = function (id) {
-        var url = this.heroesUrl + "/" + id;
+    }
+    delete(id) {
+        const url = `${this.heroesUrl}/${id}`;
         return this.http
             .delete(url, { headers: this.headers })
             .toPromise()
-            .then(function () { return null; })
+            .then(() => null)
             .catch(this.handleError);
-    };
-    HeroService.prototype.handleError = function (error) {
+    }
+    handleError(error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
-    };
-    return HeroService;
-}());
+    }
+};
 HeroService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])

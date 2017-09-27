@@ -1,5 +1,23 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
+
+    <div layout="row">
+    <md-card class="example-card" *ngFor="let hero of heroes">
+        <md-card-header>
+            <md-card-title>{{hero.name}}</md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <p>
+                Hero details coming soon
+            </p>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button [routerLink]="['/detail', hero.id]">DETAILS</button>
+        </md-card-actions>
+    </md-card>
+    </div>
+
+
     <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
         <div class="module hero">
             <h4>{{hero.name}}</h4>

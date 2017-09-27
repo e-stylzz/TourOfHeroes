@@ -17,7 +17,7 @@ import { HeroService }          from './hero.service';
 import { HeroSearchComponent }  from './hero-search.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule }       from '@angular/material';
+import { MdButtonModule, MdToolbarModule, MdCardModule }       from '@angular/material';
 
 @NgModule({
   imports:      [ 
@@ -27,6 +27,8 @@ import { MdButtonModule }       from '@angular/material';
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     MdButtonModule,
+    MdToolbarModule,
+    MdCardModule,
     BrowserAnimationsModule,
   ],
   declarations: [ 

@@ -32,6 +32,8 @@ AppModule = __decorate([
             angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
             app_routing_module_1.AppRoutingModule,
             material_1.MdButtonModule,
+            material_1.MdToolbarModule,
+            material_1.MdCardModule,
             animations_1.BrowserAnimationsModule,
         ],
         declarations: [

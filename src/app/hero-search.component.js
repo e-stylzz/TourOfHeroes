@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const Observable_1 = require("rxjs/Observable");
@@ -34,7 +35,9 @@ let HeroSearchComponent = class HeroSearchComponent {
             .debounceTime(300) // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged() // ignore if next search term is same as previous
             .switchMap(term => term // switch to new observable each time the term changes
+            // return the http search observable
             ? this.heroSearchService.search(term)
+            // or the observable of empty heroes if there was no search term
             : Observable_1.Observable.of([]))
             .catch(error => {
             // TODO: add real error handling

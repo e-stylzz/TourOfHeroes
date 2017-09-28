@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let AppComponent = class AppComponent {
     constructor() {
@@ -20,11 +21,13 @@ AppComponent = __decorate([
                 <span>{{title}}</span>
             </md-toolbar-row>
         </md-toolbar>
+        <div id="container">
         <nav>
             <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
             <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
         </nav>
         <router-outlet></router-outlet>
+        </div>
     `,
         styleUrls: ['./app.component.css']
     })

@@ -1,7 +1,7 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
 
-    <div layout="row">
+    <div fxLayout="row" fxLayoutAlign="space-between stretch">
     <md-card class="example-card" *ngFor="let hero of heroes">
         <md-card-header>
             <md-card-title>{{hero.name}}</md-card-title>
@@ -18,10 +18,10 @@
     </div>
 
 
-    <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
+    <!-- <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
         <div class="module hero">
             <h4>{{hero.name}}</h4>
         </div>
-    </a>
+    </a> -->
 </div>
 <hero-search></hero-search>

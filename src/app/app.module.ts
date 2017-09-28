@@ -18,6 +18,7 @@ import { HeroSearchComponent }  from './hero-search.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdToolbarModule, MdCardModule }       from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports:      [ 
@@ -30,6 +31,7 @@ import { MdButtonModule, MdToolbarModule, MdCardModule }       from '@angular/ma
     MdToolbarModule,
     MdCardModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
   ],
   declarations: [ 
     AppComponent,

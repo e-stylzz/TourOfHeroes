@@ -61,5 +61,12 @@
   }
 
   .example-card {
-    width: 175px;
+    /* width: 175px; */
+    width: 20%;
+    /* padding: 0; */
+  }
+
+  .mat-card-actions {
+    background-color: red;
+    display: flex;
   }

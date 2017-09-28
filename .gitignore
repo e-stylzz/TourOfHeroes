@@ -1,1 +1,8 @@
+# NPM Files
 node_modules
+
+# Build Generated Files
+src/app/**/*.js
+src/app/**/*.js.map
+src/app/main.js
+src/app/main.js.map

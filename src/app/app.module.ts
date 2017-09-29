@@ -15,6 +15,7 @@ import { HeroesComponent }      from './Heroes/heroes.component';
 import { DashboardComponent }   from './Dashboard/dashboard.component';
 import { HeroService }          from './Services/hero.service';
 import { HeroSearchComponent }  from './Hero-Search/hero-search.component';
+import { VillainsComponent }    from './Villains/villains.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdToolbarModule, MdCardModule }       from '@angular/material';
@@ -38,7 +39,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    VillainsComponent,
   ],
   providers: [
     HeroService,

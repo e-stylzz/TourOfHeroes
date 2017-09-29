@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 // using in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './Services/in-memory-data.service';
 
 import { AppComponent }         from './app.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { HeroesComponent }      from './heroes.component';
-import { DashboardComponent }   from './dashboard.component';
-import { HeroService }          from './hero.service';
-import { HeroSearchComponent }  from './hero-search.component';
+import { HeroDetailComponent }  from './Hero-Detail/hero-detail.component';
+import { HeroesComponent }      from './Heroes/heroes.component';
+import { DashboardComponent }   from './Dashboard/dashboard.component';
+import { HeroService }          from './Services/hero.service';
+import { HeroSearchComponent }  from './Hero-Search/hero-search.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdToolbarModule, MdCardModule }       from '@angular/material';
